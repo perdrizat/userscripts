@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         Toppreise Preferred Vendor Highlighter
-// @namespace    https://github.com/perdrizat
+// @namespace    https://github.com/perdrizat/userscripts
 // @version      1.0
 // @description  Highlights offers from vendors marked with a filled star, dampens others, and hides the redundant "Favorite Shops" list on Toppreise.ch
 // @author       Markus Perdrizat
+// @license      MIT
 // @match        https://www.toppreise.ch/*
 // @grant        GM_addStyle
 // @run-at       document-end
