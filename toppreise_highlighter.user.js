@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Toppreise Preferred Vendor Highlighter
 // @namespace    https://github.com/perdrizat/userscripts
-// @version      1.0
+// @version      1.1
 // @description  Highlights offers from vendors marked with a filled star, dampens others, and hides the redundant "Favorite Shops" list on Toppreise.ch
 // @author       Markus Perdrizat
 // @license      MIT
@@ -68,10 +68,11 @@
             // Skip if we've already processed this row to improve performance
             if (offer.classList.contains('tp-script-processed')) return;
 
-            // Check for the filled star icon (Preferred Vendor)
-            const isPreferred = offer.querySelector('.TPIcons-filledstar');
-            // Check for the empty star icon (Standard Vendor)
-            const isStandard = offer.querySelector('.TPIcons-star');
+            // Scope to .Plugin_ShopLogo — the offer row also contains a TPIcons-filledstar
+            // inside the price section (a price-condition tooltip), which would otherwise
+            // misclassify non-favorited vendors as preferred.
+            const isPreferred = offer.querySelector('.Plugin_ShopLogo .TPIcons-filledstar');
+            const isStandard = offer.querySelector('.Plugin_ShopLogo .TPIcons-star');
 
             if (isPreferred) {
                 offer.classList.add('tp-script-preferred');

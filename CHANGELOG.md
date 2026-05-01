@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [2026-05-01]
 
+### Fixed
+
+- `toppreise_highlighter.user.js`: non-favorited vendors (e.g. Buchmann) were misclassified as preferred because a `TPIcons-filledstar` icon also exists in the price-condition tooltip; star selectors are now scoped to `.Plugin_ShopLogo`
+
 ### Added
 
 - `heise_newsticker_filter.user.js`: filter out unwanted stories, with collapsible "Kategorienfilter" 
