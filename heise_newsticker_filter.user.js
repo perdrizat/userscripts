@@ -15,17 +15,19 @@
 (function() {
     'use strict';
 
+    // enabled: true  = show articles of this type (checkbox checked)
+    // enabled: false = hide articles of this type (checkbox unchecked)
     const FILTERS = [
-        { key: 'ct',           label: "c't Magazin",  enabled: false, test: a => a.classList.contains('a-theme--ct') },
-        { key: 'ix',           label: 'iX Magazin',   enabled: false, test: a => a.classList.contains('a-theme--ix') },
-        { key: 'macandi',      label: 'Mac & i',      enabled: false, test: a => a.classList.contains('a-theme--macandi') },
-        { key: 'make',         label: 'Make',         enabled: false, test: a => a.classList.contains('a-theme--make') },
-        { key: 'autos',        label: 'Autos',        enabled: false, test: a => a.classList.contains('a-theme--autos') },
-        { key: 'security',     label: 'Security',     enabled: false, test: a => a.classList.contains('a-theme--security') },
-        { key: 'developer',    label: 'Developer',    enabled: false, test: a => a.classList.contains('a-theme--developer') },
-        { key: 'heisePlus',    label: 'Heise+',       enabled: true,  test: a => !!a.querySelector('svg.heise-plus-logo') },
-        { key: 'bestlisten',   label: 'bestenlisten', enabled: true,  test: a => a.classList.contains('a-theme--bestenlisten') },
-        { key: 'heiseAngebot', label: 'heise-Angebot',enabled: true,  test: a => hasMeta(a, 'heise-Angebot') },
+        { key: 'ct',           label: "c't Magazin",  enabled: true, test: a => a.classList.contains('a-theme--ct') },
+        { key: 'ix',           label: 'iX Magazin',   enabled: true, test: a => a.classList.contains('a-theme--ix') },
+        { key: 'macandi',      label: 'Mac & i',      enabled: true, test: a => a.classList.contains('a-theme--macandi') },
+        { key: 'make',         label: 'Make',         enabled: true, test: a => a.classList.contains('a-theme--make') },
+        { key: 'autos',        label: 'Autos',        enabled: true, test: a => a.classList.contains('a-theme--autos') },
+        { key: 'security',     label: 'Security',     enabled: true, test: a => a.classList.contains('a-theme--security') },
+        { key: 'developer',    label: 'Developer',    enabled: true, test: a => a.classList.contains('a-theme--developer') },
+        { key: 'heisePlus',    label: 'Heise+',       enabled: false, test: a => !!a.querySelector('svg.heise-plus-logo') },
+        { key: 'bestlisten',   label: 'bestenlisten', enabled: false, test: a => a.classList.contains('a-theme--bestenlisten') },
+        { key: 'heiseAngebot', label: 'heise-Angebot',enabled: false, test: a => hasMeta(a, 'heise-Angebot') },
     ];
 
     FILTERS.forEach(f => { f.enabled = GM_getValue('hnf_' + f.key, f.enabled); });
@@ -38,7 +40,7 @@
     }
 
     function shouldRemove(article) {
-        return FILTERS.some(f => f.enabled && f.test(article));
+        return FILTERS.some(f => !f.enabled && f.test(article));
     }
 
     // Inline style beats any site CSS that might override the [hidden] attribute.
