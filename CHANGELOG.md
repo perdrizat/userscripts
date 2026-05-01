@@ -6,7 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+
 ## [2026-05-01]
+
+### Added
+
+- `heise_newsticker_filter.user.js`: filter out unwanted stories, with collapsible "Kategorienfilter" 
 
 ### Changed
 
