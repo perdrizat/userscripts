@@ -13,6 +13,7 @@ A collection of Tampermonkey userscripts for improving various websites.
 |--------|------|-------------|
 | [Toppreise Preferred Vendor Highlighter](https://github.com/perdrizat/userscripts/raw/refs/heads/main/toppreise_highlighter.user.js) | toppreise.ch | Highlights offers from your starred vendors with a green border, fades others, and hides the redundant Favorite Shops box. |
 | [Heise Newsticker Filter](https://github.com/perdrizat/userscripts/raw/refs/heads/main/heise_newsticker_filter.user.js) | heise.de | Removes unwanted category stories from the newsticker. Configurable with Kategorienfilter. |
+| [Send to qBittorrent (Pirate Bay)](https://github.com/perdrizat/userscripts/raw/refs/heads/main/piratebay_qbittorrent.user.js) | thepiratebay.org | Adds a button next to each magnet link that sends the torrent straight to your qBittorrent instance. Prompts for your WebUI URL on first use. |
 
 ## License
 

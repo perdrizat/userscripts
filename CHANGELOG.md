@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2026-06-10]
+
+### New
+
+- `piratebay_qbittorrent.user.js`: moved in from off-repo — adds a button next to each Pirate Bay magnet link that sends the torrent to your qBittorrent instance via its WebUI API
+
+### Changed
+
+- CONTRIBUTING.md: new "Script guidelines" section (config via GM storage not hardcoded infra, docs in script header)
 
 ## [2026-05-01]
 
