@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## [2026-11-14]
+
+### New
+
+- `mastodon_remote_follow.user.js` (v0.7): on any Mastodon instance's follower/following lists and profile pages, reworks each account's Follow button to act on your home instance — shows if you already follow them, one-click follow/unfollow. Home instance URL + access token configured via GM storage (auto-detected when logged in), all requests throttled with HTTP 429 handling, optional activity filter that hides stale entries without touching them.
+
 ## [2026-06-10]
 
 ### New
